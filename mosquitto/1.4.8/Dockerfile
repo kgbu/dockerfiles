@@ -12,16 +12,16 @@ RUN apt-get update && apt-get install -y \
   && apt-get clean \
   && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
-RUN wget http://git.warmcat.com/cgi-bin/cgit/libwebsockets/snapshot/libwebsockets-1.4-chrome43-firefox-36.tar.gz \
-  && tar -xzvf libwebsockets-1.4-chrome43-firefox-36.tar.gz \
-  && cd libwebsockets-1.4-chrome43-firefox-36 \
+RUN wget http://git.warmcat.com/cgi-bin/cgit/libwebsockets/snapshot/libwebsockets-1.7.3.tar.gz \
+  && tar -xzvf libwebsockets-1.7.3.tar.gz \
+  && cd libwebsockets-1.7.3 \
   && mkdir build \
   && cd build \
   && cmake .. \
   && make \
   && make install \
   && cd ../.. \
-  && rm -rf libwebsockets-1.4-chrome43-firefox-36.tar.gz libwebsockets-1.4-chrome43-firefox-36
+  && rm -rf libwebsockets-1.7.3.tar.gz libwebsockets-1.7.3
 
 
 # Install Mosquitto
